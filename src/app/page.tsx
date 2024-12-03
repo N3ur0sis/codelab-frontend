@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { useEffect, useState } from 'react';
 
 interface User {
@@ -14,15 +14,15 @@ export default function Home() {
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`)
-      .then(response => response.json())
-      .then(data => setUsers(data));
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
   }, []);
 
   return (
     <div>
       <h1>Liste des utilisateurs</h1>
       <ul>
-        {users.map(user => (
+        {users.map((user) => (
           <li key={user.id}>
             {user.name} ({user.email}) - {user.role}
           </li>
